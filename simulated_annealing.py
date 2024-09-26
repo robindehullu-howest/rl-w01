@@ -57,7 +57,7 @@ def main():
     env = gymnasium.make('CartPole-v1', render_mode=None)
     env.metadata["render_fps"] = 0
 
-    history = annealing(env, cooling_rate=0.996)
+    history = annealing(env, starting_temperature=10000, cooling_rate=0.992)
 
     max_average_reward, best_weights = max(history, key=lambda x: x[0])
 
