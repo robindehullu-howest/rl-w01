@@ -1,0 +1,16 @@
+- How do these different search algorithms compare to or differ from each other in terms of reward and computational efficiency?
+    In general the combination of these algorithms improves the computational efficiency. The maximum reward is achieved as well as long as the variables are set correctly. Sometimes it can still get into a local optimum that it can't get out of, though. 
+
+- Check if you can solve the cartpole-V1 environment. This environment
+has a maximum number of episodes steps of 500 where the cartpole-V0
+is limited to 200 episode steps.
+
+- Does it make sense to increase the number of observation variables
+by deriving new observations from the existing ones? Think of it as
+feature expansion in machine learning.
+    It can make sense in certain situations but I don't think it makes sense in this one. Because the more information you give it, the more dimensions are added so the more difficult it is for the algorithms to converge to the global maximum.
+
+- Consider the MountainCar-v0 environment. Argument whether or not it
+is possible to solve by means of these search based optimization
+techniques.
+    I think not, while the current techniques can hop over small hills to find other optima, I think the Mountain Car is too big of a challenge for those techniques to reliably conquer.
