@@ -61,7 +61,7 @@ def main():
     env = gymnasium.make('CartPole-v1', render_mode=None)
     env.metadata["render_fps"] = 0
 
-    history = annealing(env, starting_temperature=10000, cooling_rate=0.992)
+    history = annealing(env, num_iterations=5_000, starting_temperature=10_000, cooling_rate=0.998)
 
     max_average_reward, best_weights = max(history, key=lambda x: x[0])
 
@@ -72,7 +72,7 @@ def main():
     long_run_average_reward = np.mean(long_run)
     print(f"\nLong run average reward: {long_run_average_reward}")
 
-    plot_histogram(long_run, 'Histogram of Rewards over 1000 Episodes', 'Reward', 'Frequency')
+    plot_histogram(long_run, 'Histogram of Rewards over 10000 Episodes', 'Reward', 'Frequency')
 
 if __name__ == "__main__":
     main()
